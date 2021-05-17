@@ -10,10 +10,10 @@ This package is clone from https://github.com/Torann/laravel-repository and to s
 
 ## Install
 
-```composer
+```
 composer require haipham22/repository
 ```
 
-```php
+```
 php artisan vendor:publish --provider=haipham22\LarRepository\Providers\RepositoryServiceProvider
 ```
