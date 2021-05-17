@@ -1,0 +1,25 @@
+{
+    "name": "haipham22/repository",
+    "description": "Repository pattern for Laravel",
+    "authors": [
+        {
+            "name": "Hải Phạm",
+            "email": "haipham.net@gmail.com",
+            "homepage": "https://haipham.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "haipham22\\LarRepository\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "haipham22\\LarRepository\\Providers\\RepositoryServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
