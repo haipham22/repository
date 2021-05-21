@@ -19,10 +19,10 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $path = $this->packagePath('config/repository.php');
         $this->mergeConfigFrom(
-            $path, 'repository'
+            $path, 'repository.'
         );
         $this->publishes([
-            $path => config_path('repository.php')
+            $path => config_path('repository..php')
         ], 'config');
     }
 
