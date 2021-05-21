@@ -8,7 +8,7 @@ class RepositoryMakeCommand extends GeneratorCommand
 {
     protected $name = 'make:repository';
 
-    protected $type = 'repository.';
+    protected $type = 'Repository';
 
     protected $description = 'Create a new repository class';
 
