@@ -68,8 +68,8 @@ trait Cacheable
      */
     public function skippedCache()
     {
-        return config('repositorycache_enabled', false) === false
-            || app('request')->has(config('repositorycache_skip_param', 'skipCache')) === true;
+        return config('repository.cache_enabled', false) === false
+            || app('request')->has(config('repository.cache_skip_param', 'skipCache')) === true;
     }
 
     /**
@@ -137,7 +137,7 @@ trait Cacheable
     public function flushCache()
     {
         // Cache disabled, just ignore this
-        if ($this->eventFlushCache === false || config('repositorycache_enabled', false) === false) {
+        if ($this->eventFlushCache === false || config('repository.cache_enabled', false) === false) {
             return false;
         }
 

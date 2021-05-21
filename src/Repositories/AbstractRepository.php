@@ -543,10 +543,10 @@ abstract class AbstractRepository implements RepositoryContract
     public function paginate($per_page = null, $columns = ['*'], $page_name = 'page', $page = null)
     {
         // Get the default per page when not set
-        $per_page = $per_page ?: config('repositoryper_page', 15);
+        $per_page = $per_page ?: config('repository.per_page', 15);
 
         // Get the per page max
-        $per_page_max = config('repositorymax_per_page', 100);
+        $per_page_max = config('repository.max_per_page', 100);
 
         // Ensure the user can never make the per
         // page limit higher than the defined max.
@@ -574,7 +574,7 @@ abstract class AbstractRepository implements RepositoryContract
         $this->newQuery();
 
         // Get the default per page when not set
-        $per_page = $per_page ?: config('repositoryper_page', 15);
+        $per_page = $per_page ?: config('repository.per_page', 15);
 
         return $this->query->simplePaginate($per_page, $columns, $page_name, $page);
     }
