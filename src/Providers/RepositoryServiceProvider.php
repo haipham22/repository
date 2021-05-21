@@ -22,7 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
             $path, 'repository'
         );
         $this->publishes([
-            $path => config_path('repository')
+            $path => config_path('repository.php')
         ], 'config');
     }
 
