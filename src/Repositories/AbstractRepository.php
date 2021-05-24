@@ -237,6 +237,19 @@ abstract class AbstractRepository implements RepositoryContract
 
         return $this->query->where($field, '=', $value)->first($columns);
     }
+    
+    /**
+     * Get the first record matching the attributes or create it.
+     *
+     * @param  array  $attributes
+     * @param  array  $values
+     * @return Model|static
+     */
+    public function findOrCreate(array $attributes = [], array $values = []) 
+    {
+        $this->newQuery();
+        return $this->query->firstOrCreate($attributes, $values);
+    }
 
     /**
      * Find data by field
