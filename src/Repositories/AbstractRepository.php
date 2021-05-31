@@ -7,6 +7,7 @@ namespace haipham22\LarRepository\Repositories;
 use BadMethodCallException;
 use Closure;
 use haipham22\LarRepository\Contracts\RepositoryContract;
+use haipham22\LarRepository\Exceptions\RepositoryException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
