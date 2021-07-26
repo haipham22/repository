@@ -6,5 +6,5 @@ use haipham22\LarRepository\Repositories\AbstractRepository;
 
 class {{ class }} extends AbstractRepository
 {
-
+  //protect $model = AnyModel::class
 }
