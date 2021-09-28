@@ -1,6 +1,9 @@
 {
     "name": "haipham22/repository",
     "description": "Repository pattern for Laravel",
+    "require": {
+        "torann/laravel-repository": "^0.6.1"
+    },
     "authors": [
         {
             "name": "Hải Phạm",
@@ -10,13 +13,16 @@
     ],
     "autoload": {
         "psr-4": {
-            "haipham22\\LarRepository\\": "src/"
+            "haipham22\\Repository\\": "src/"
         }
     },
     "extra": {
-        "laravel":{
+        "laravel": {
             "providers": [
-                "haipham22\\LarRepository\\Providers\\RepositoryServiceProvider"
+                "haipham22\\Repository\\Providers\\RepositoryServiceProvider"
+            ],
+            "dont-discover": [
+                "torann/laravel-repository"
             ]
         }
     },

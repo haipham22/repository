@@ -2,9 +2,10 @@
 
 namespace {{ namespace }};
 
-use haipham22\LarRepository\Repositories\AbstractRepository;
+use haipham22\Repository\Repositories\AbstractRepository;
+use haipham22\Repository\Contracts\RepositoryContract;
 
-class {{ class }} extends AbstractRepository
+class {{ class }} extends AbstractRepository extends RepositoryContract
 {
   //protect $model = AnyModel::class
 }
