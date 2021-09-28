@@ -1,13 +1,13 @@
 <?php
 
 
-namespace haipham22\LarRepository\Providers;
+namespace haipham22\Repository\Providers;
 
-use haipham22\LarRepository\Commands\RepositoryMakeCommand;
-use haipham22\LarRepository\Commands\ServiceMakeCommand;
-use Illuminate\Support\ServiceProvider;
+use haipham22\Repository\Commands\RepositoryMakeCommand;
+use haipham22\Repository\Commands\ServiceMakeCommand;
+use haipham22\Repository\Repositories\AbstractRepository;
 
-class RepositoryServiceProvider extends ServiceProvider
+class RepositoryServiceProvider extends \Torann\LaravelRepository\RepositoryServiceProvider
 {
 
     protected $commands = [
@@ -17,13 +17,15 @@ class RepositoryServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $path = $this->packagePath('config/repository.php');
+        $path = $this->packagePath('config/repositories.php');
         $this->mergeConfigFrom(
-            $path, 'repository'
+            $path, 'repositories'
         );
         $this->publishes([
-            $path => config_path('repository.php')
+            $path => config_path('repositories.php')
         ], 'config');
+
+        AbstractRepository::setCacheInstance($this->app['cache']);
     }
 
     private function packagePath(string $path): string
@@ -33,6 +35,7 @@ class RepositoryServiceProvider extends ServiceProvider
 
     public function register()
     {
+        parent::register();
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
         }

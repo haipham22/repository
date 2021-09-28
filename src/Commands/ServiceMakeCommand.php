@@ -1,6 +1,6 @@
 <?php
 
-namespace haipham22\LarRepository\Commands;
+namespace haipham22\Repository\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 
