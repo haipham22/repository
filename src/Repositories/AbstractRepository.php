@@ -900,6 +900,18 @@ abstract class AbstractRepository implements RepositoryContract
 
         return false;
     }
+    
+    /**
+     * Set the relationships that should be eager loaded
+     * @param  string|array  $relations
+     * @return $this
+     */
+    public function with($relations, $callback = null)
+    {
+        return $this->addScopeQuery(function (Builder $query) use ($relations, $callback) {
+            return $query->with($relations, $callback);
+        });
+    }
 
     /**
      * Handle dynamic static method calls into the method.
