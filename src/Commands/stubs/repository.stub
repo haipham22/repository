@@ -5,7 +5,7 @@ namespace {{ namespace }};
 use haipham22\Repository\Repositories\AbstractRepository;
 use haipham22\Repository\Contracts\RepositoryContract;
 
-class {{ class }} extends AbstractRepository extends RepositoryContract
+class {{ class }} extends AbstractRepository implements RepositoryContract
 {
-  //protect $model = AnyModel::class
+  //protected $model = AnyModel::class
 }
