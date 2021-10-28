@@ -17,7 +17,7 @@ abstract class AbstractRepository extends \Torann\LaravelRepository\Repositories
     /**
      * @param array|string $relations
      * @param null $callback
-     * @return mixed
+     * @return AbstractRepository|mixed
      */
     public function with($relations)
     {
