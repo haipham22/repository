@@ -38,4 +38,16 @@ abstract class AbstractRepository extends \Torann\LaravelRepository\Repositories
         $this->newQuery();
         return $this->query->firstOrCreate($attributes, $values);
     }
+
+    /**
+     * Lock the selected rows in the table for updating.
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function lockForUpdate()
+    {
+        return $this->addScopeQuery(function ($query) {
+            return $query->lockForUpdate();
+        });
+    }
 }
